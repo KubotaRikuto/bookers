@@ -19,6 +19,102 @@
   box-sizing: border-box;
 }
 
-p{
+/* 全体レイアウト */
+#notice{
+  color: green;
+}
+
+body{
+  margin: 33px;
+  line-height: 18px;
+  color: #333;
+  background-color: #ffffff;
+  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
+}
+
+h1{
+  margin: 0.67em 0 ;
+  font-size: 2em;
+}
+
+h2{
+  margin: 0.83em 0;
+  font-size: 1.5em;
+}
+
+p{
+  margin: 33px;
+  font-size: 13px;
+}
+
+ul{
+  padding-left: 40px;
+  margin: 33px;
+  font-size: 13px;
+}
+
+a{
+  display: inline-block;
+  color: #333
+}
+a:visited{ /* 訪問済みリンク */
+  color: #333;
+}
+a:hover{
+  color: #ffffff;
+  background-color: #333;
+}
+
+/* 一覧画面テーブル */
+th{
+  padding-bottom: 5px;
+}
+
+td{
+  padding: 0 5px 7px ;
+}
+/* 投稿フォーム */
+.field, .actions{
+  margin-bottom: 10px;
+}
+
+label{
+  display: block;
+}
+
+#book_title{
+  padding: 1px 2px;
+}
+
+textarea {
+  padding: 2px;
+}
+
+/* 空白エラー */
+.error-box{
+  width: 450px;
+  padding: 7px;
+  padding-bottom: 0;
+  border: 2px solid red;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #f0f0f0;
+}
+
+.error-box h2{
+  padding: 5px 5px 5px 15px;
+  margin: -7px -7px 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  background-color: #c00;
+}
+.error-box ul li{
+  font-size: 12px;
+  list-style: square;
+}
+/* リダイレクト */
+input{
+  padding: 1px 6px;
 }

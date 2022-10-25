@@ -1,18 +1,16 @@
-<div>
-  <!--フラッシュメッセージ実装-->
-  <%= flash[:notice] %>
-</div>
-
-<h1>Books</h1>
+<!--フラッシュメッセージ実装-->
+<p id="notice"><%= flash[:notice] %></p>
 <!-- 投稿一覧 -->
-
-  <div class="book-list">
-    <table>
+<h1 class="index-title">Books</h1>
+  <table>
+    <thead>
       <tr>
         <th>Title</th>
         <th>Body</th>
         <th colspan = "3"></th>
       </tr>
+    </thead>
+    <tbody>
       <% @books.each do |book| %>
         <tr>
           <td><%= book.title %></td> <!-- Title -->
@@ -22,33 +20,34 @@
           <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure？" %></td> <!-- Destroy(メッセージ付) -->
         </tr>
       <% end %>
-    </table>
-  </div>
+    </tbody>
+  </table>
 
 <!-- 新規投稿 -->
-<h1>New book</h1>
+<h2 class="New-bok-title">New book</h2>
 <!--エラーメッセージ表示-->
-<div class="error-text"><!--エラーメッセージ表示start-->
-  <% if @book.errors.any? %>
+<% if @book.errors.any? %>
+  <div class="error-box"><!--エラーメッセージ表示start-->
     <h2><%= @book.errors.count %> errors prohibited this book from being saved:</h2>
     <ul>
       <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
     </ul>
-  <% end %>
+  </div> <!--エラーメッセージ表示end-->
+<% end %>
 
   <!--新規投稿フォーム-->
   <%= form_with model: @book, url: books_path, method: :post do |f| %>
-  <div class= "field">
-    <label>Title</label>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <label>Body</label>
-    <%= f.text_area :body %>
-  </div>
-  <%= f.submit 'Create Book' %>
-
+    <div class= "field">
+      <label>Title</label>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <label>Body</label>
+      <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Create Book' %>
+    </div>
   <% end %>
-</div> <!--エラーメッセージ表示end-->
