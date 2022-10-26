@@ -110,10 +110,19 @@ textarea {
   font-size: 12px;
   background-color: #c00;
 }
+
 .error-box ul li{
   font-size: 12px;
   list-style: square;
 }
+
+/*.field-error:invalid {*/
+/*  padding: 2px;*/
+/*  display: inline-block;*/
+/*  background-color: red;*/
+/*}*/
+
+
 /* リダイレクト */
 input{
   padding: 1px 6px;
